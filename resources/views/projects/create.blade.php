@@ -1,31 +1,23 @@
-<!doctype html>
+@extends('layout')
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+@section('content')
 
-<body>
   <h1>Create a new project</h1>
 
-  <form method='POST' action='/projects'>
-
-    {{ csrf_field() }}
-    <div>
-      <input type='text' name='title' placeholder='Project title'>
+  <form method="POST" action="/projects" style='margin-bottom:10px'>
+    @csrf
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" name="title" placeholder='Title'>
     </div>
-
-    <div>
-       <textarea name='description' placeholder='Project Description'></textarea>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" name="description"></textarea>
     </div>
-
-    <div>
-        <button type='submit'>Create Project</button>
-     </div>
+  
+    <button type="submit" class="btn btn-primary">Create Project</button>
   </form>
 
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+
+  
+@endsection

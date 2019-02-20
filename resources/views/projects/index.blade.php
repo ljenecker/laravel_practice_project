@@ -12,9 +12,13 @@
 
   <ul>
 
-  @foreach($projects as $project)
-    <li>{{$project->title}} -> {{$project->description}}</li>
-  @endforeach
+    @foreach($projects as $project)
+      <li>
+        <a href='/projects/{{$project->id}}'>
+          {{$project->title}} 
+        </a>
+      </li>
+    @endforeach
 
   </ul>
   <script src="js/scripts.js"></script>
